@@ -1,0 +1,18 @@
+[project]
+name = "hw9"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "AndreyQuantum",email = "zelentsov1254@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sqlalchemy (>=2.0.44,<3.0.0)",
+    "fastapi (>=0.121.1,<0.122.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
