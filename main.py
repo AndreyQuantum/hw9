@@ -2,9 +2,9 @@ import csv
 
 from fastapi import FastAPI, HTTPException
 
-from db_interaction import DatabaseInteraction
+from repository import DatabaseInteraction
 from models import Student
-from schemas import CreateStudent
+from schemas import CreateStudent, GetStudent
 
 app = FastAPI()
 database_interaction = DatabaseInteraction()
@@ -12,16 +12,15 @@ database_interaction = DatabaseInteraction()
 def populate_db_from_file():
     with open("students.csv", "r") as f:
         reader = csv.DictReader(f)
-        students_to_create = []
         for row in reader:
-            students_to_create.append(Student(
+            student = Student(
                 last_name=row["Фамилия"],
                 name=row["Имя"],
                 faculty=row["Факультет"],
                 course=row["Курс"],
                 grade=row["Оценка"]
-            ))
-        database_interaction.create_students(students_to_create)
+            )
+            database_interaction.create_student(student)
 
 populate_db_from_file()
 @app.get("/students")

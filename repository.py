@@ -1,13 +1,11 @@
-# repository.py
 from sqlalchemy import create_engine, select, func
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import Session
 
 from models import Student, Base
-from schemas import CreateStudent, GetStudent
 
 
 class DatabaseInteraction:
-    engine = create_engine("sqlite://", echo=True)
+    engine = create_engine("sqlite:///students.db", echo=True)
     Base.metadata.create_all(engine)
 
     def create_student(self, student: Student) -> Student:
@@ -31,7 +29,7 @@ class DatabaseInteraction:
 
     def get_courses(self) -> list[str]:
         with Session(self.engine) as session:
-            unique_faculties = session.query(Student.faculty).distinct.all()
+            unique_faculties = session.query(Student.course).distinct().all()
             return [faculty[0] for faculty in unique_faculties]
 
     def get_middle_grade(self) -> float:
