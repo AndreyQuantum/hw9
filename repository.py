@@ -52,6 +52,7 @@ class DatabaseInteraction:
         with Session(self.engine) as session:
             student = self.get_student_by_id(session, student_id)
             session.delete(student)
+            session.commit()
             return student
 
     def get_middle_grade(self) -> float:

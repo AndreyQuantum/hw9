@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="fix bugs, add readme.md">
-      <change afterPath="$PROJECT_DIR$/readme_hw9.md" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="update readme file for hw10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme_hw10.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +137,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762860419587</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add update and delete methods, integrate with FastAPI, revamp structure">
+      <option name="closed" value="true" />
+      <created>1763322639520</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763322639520</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update readme file for hw10">
+      <option name="closed" value="true" />
+      <created>1763322753615</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763322753615</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -150,6 +162,8 @@
     <MESSAGE value="add db interaction" />
     <MESSAGE value="end of core functional realisation" />
     <MESSAGE value="fix bugs, add readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs, add readme.md" />
+    <MESSAGE value="add update and delete methods, integrate with FastAPI, revamp structure" />
+    <MESSAGE value="update readme file for hw10" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme file for hw10" />
   </component>
 </project>
