@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="end of core functional realisation">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="fix bugs, add readme.md">
+      <change afterPath="$PROJECT_DIR$/readme_hw9.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_interaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme_hw10.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,23 +24,31 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AndreyQuantum"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AndreyQuantum&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:AndreyQuantum/hw9.git",
-    "accountId": "d0f587cd-e1b3-4d16-ad7f-e75d62a7b244"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:AndreyQuantum/hw9.git&quot;,
+    &quot;accountId&quot;: &quot;d0f587cd-e1b3-4d16-ad7f-e75d62a7b244&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.cache/pypoetry/virtualenvs/hw9-xor2JGNO-py3.12/lib/python3.12/site-packages/sqlalchemy/orm/session.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="35KM2LeKHIs9FEnF48MeQK2Qgy4" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -59,9 +67,9 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "hw10",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/andrey-zelentsov/PycharmProjects/MS_python/hw9",
+    "last_opened_file_path": "/home/andrey-zelentsov/PycharmProjects/MS_python/MFTI-workshop-project",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
@@ -125,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762859622558</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix bugs, add readme.md">
+      <option name="closed" value="true" />
+      <created>1762860419587</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762860419587</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -133,6 +149,7 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="add db interaction" />
     <MESSAGE value="end of core functional realisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="end of core functional realisation" />
+    <MESSAGE value="fix bugs, add readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs, add readme.md" />
   </component>
 </project>

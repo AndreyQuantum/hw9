@@ -1,15 +1,18 @@
 import csv
+import os
+import uuid
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 
 from repository import DatabaseInteraction
 from models import Student
 from schemas import CreateStudent, GetStudent
-
-app = FastAPI()
 database_interaction = DatabaseInteraction()
 
-def populate_db_from_file():
+
+@asynccontextmanager
+async def lifespan(fastapi_app: FastAPI):
     with open("students.csv", "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -21,8 +24,12 @@ def populate_db_from_file():
                 grade=row["Оценка"]
             )
             database_interaction.create_student(student)
+    yield
+    database_interaction.engine.dispose()
+    os.remove("students.db")
 
-populate_db_from_file()
+app = FastAPI(lifespan=lifespan)
+
 @app.get("/students")
 def get_students(faculty: str | None = None):
     result = database_interaction.get_students(faculty)
@@ -31,9 +38,18 @@ def get_students(faculty: str | None = None):
     raise HTTPException(status_code=404, detail="Students not found")
 
 @app.post("/students")
-def create_student(student: CreateStudent):
+def create_student(student: CreateStudent) -> GetStudent:
     student_to_create = Student(**student.model_dump())
-    database_interaction.create_student(student_to_create)
+    return database_interaction.create_student(student_to_create)
+
+@app.put("/students/{student_id}")
+def update_student(student_id: int, student: CreateStudent) -> GetStudent:
+    updated_dict = student.model_dump(exclude_unset=True)
+    return database_interaction.update_student(student_id, updated_dict)
+
+@app.delete("/students/{student_id}")
+def delete_student(student_id: int) -> GetStudent:
+    return database_interaction.delete_student(student_id)
 
 @app.get("/courses")
 def get_courses() -> list[str]:
