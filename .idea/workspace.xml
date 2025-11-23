@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="refactor routing, modularize API, and update readme for hw11">
-      <change afterPath="$PROJECT_DIR$/api/auth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/course_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/grade_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/__init__.py" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="modularize repositories, refactor db session handling, and streamline API routing">
+      <change afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/user_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/password_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/user_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/student_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763921251168</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="modularize repositories, refactor db session handling, and streamline API routing">
+      <option name="closed" value="true" />
+      <created>1763922994013</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763922994013</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -204,6 +207,7 @@
     <MESSAGE value="update readme file for hw10" />
     <MESSAGE value="fix student deletion" />
     <MESSAGE value="refactor routing, modularize API, and update readme for hw11" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor routing, modularize API, and update readme for hw11" />
+    <MESSAGE value="modularize repositories, refactor db session handling, and streamline API routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="modularize repositories, refactor db session handling, and streamline API routing" />
   </component>
 </project>

@@ -7,6 +7,7 @@ from fastapi import FastAPI, HTTPException
 from api.student import app as student_router
 from api.grade import app as grade_router
 from api.courses import app as courses_router
+from api.user import user_app
 from models.models import Student
 from repositories.base import get_session, engine
 from repositories.student_repository import StudentRepository
@@ -33,6 +34,7 @@ async def lifespan(fastapi_app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-app.include_router(router=student_router, prefix="/students", tags=["students"])
-app.include_router(router=grade_router, prefix="/grades", tags=["grades"])
-app.include_router(router=courses_router, prefix="/courses",tags=["courses"])
+app.include_router(router=student_router, prefix="/student", tags=["student"])
+app.include_router(router=grade_router, prefix="/grade", tags=["grade"])
+app.include_router(router=courses_router, prefix="/course",tags=["course"])
+app.include_router(router=user_app, prefix="/user",tags=["user"])

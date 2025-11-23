@@ -7,7 +7,6 @@ from models.base import Base
 class Student(Base):
 
     __tablename__ = "student"
-    id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str]
     last_name: Mapped[str]
     faculty: Mapped[str]
