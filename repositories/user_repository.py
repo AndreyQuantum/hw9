@@ -7,6 +7,9 @@ from services.password_service import PasswordService
 
 class UserRepository:
 
+    def get_user_by_id(self, user_id: int, db_session: Session) -> User | None:
+        return db_session.query(User).filter(User.id == user_id).first()
+
     def get_user_by_email(self, email: str, db_session: Session) -> User | None:
         return db_session.query(User).filter(User.email == email).first()
 

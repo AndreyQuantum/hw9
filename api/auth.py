@@ -11,6 +11,9 @@ from services.auth_service import AuthService
 
 auth_router = APIRouter()
 
+@auth_router.post("/logout")
+def logout(db_session: session_deps):
+    pass
 
 @auth_router.post("/token")
 def login_for_access_token(
