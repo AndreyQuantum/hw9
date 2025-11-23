@@ -1,8 +1,8 @@
-from sqlalchemy.orm import DeclarativeBase, Mapped
+from sqlalchemy.orm import Mapped
 from sqlalchemy.testing.schema import mapped_column
 
-class Base(DeclarativeBase):
-    pass
+from models.base import Base
+
 
 class Student(Base):
 

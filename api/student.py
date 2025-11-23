@@ -1,35 +1,30 @@
-import csv
-import os
-import uuid
-from contextlib import asynccontextmanager
+from fastapi import HTTPException, APIRouter
 
-from fastapi import FastAPI, HTTPException, APIRouter
-
-from repository import StudentRepository
-from models import Student
-from schemas import CreateStudent, GetStudent
-database_interaction = StudentRepository()
+from models.models import Student
+from repositories.base import session_deps
+from repositories.student_repository import StudentRepository
+from schemas.student import CreateStudent, GetStudent
 
 app = APIRouter()
 
 
 @app.get("/")
-def get_students(faculty: str | None = None):
-    result = database_interaction.get_students(faculty)
+def get_students(db_session: session_deps,faculty: str | None = None):
+    result = StudentRepository().get_students(faculty, db_session)
     if result:
         return result
     raise HTTPException(status_code=404, detail="Students not found")
 
 @app.post("/")
-def create_student(student: CreateStudent) -> GetStudent:
+def create_student(student: CreateStudent,db_session: session_deps) -> GetStudent:
     student_to_create = Student(**student.model_dump())
-    return database_interaction.create_student(student_to_create)
+    return StudentRepository().create_student(student_to_create, db_session)
 
 @app.put("/{student_id}")
-def update_student(student_id: int, student: CreateStudent) -> GetStudent:
+def update_student(student_id: int, student: CreateStudent, db_session: session_deps) -> GetStudent:
     updated_dict = student.model_dump(exclude_unset=True)
-    return database_interaction.update_student(student_id, updated_dict)
+    return StudentRepository().update_student(student_id, updated_dict, db_session)
 
 @app.delete("/{student_id}")
-def delete_student(student_id: int) -> GetStudent:
-    return database_interaction.delete_student(student_id)
+def delete_student(student_id: int, db_session: session_deps) -> GetStudent:
+    return StudentRepository().delete_student(student_id, db_session)

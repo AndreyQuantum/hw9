@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="fix student deletion">
-      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="refactor routing, modularize API, and update readme for hw11">
+      <change afterPath="$PROJECT_DIR$/api/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/course_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/grade_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme_hw9.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/student_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/schemas/student.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +90,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/schemas" />
+      <recent name="$PROJECT_DIR$/repositories" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/api" />
     </key>
   </component>
@@ -172,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763323688941</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor routing, modularize API, and update readme for hw11">
+      <option name="closed" value="true" />
+      <created>1763921251168</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763921251168</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -184,6 +203,7 @@
     <MESSAGE value="add update and delete methods, integrate with FastAPI, revamp structure" />
     <MESSAGE value="update readme file for hw10" />
     <MESSAGE value="fix student deletion" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix student deletion" />
+    <MESSAGE value="refactor routing, modularize API, and update readme for hw11" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor routing, modularize API, and update readme for hw11" />
   </component>
 </project>
