@@ -8,15 +8,22 @@ from api.student import app as student_router
 from api.grade import app as grade_router
 from api.courses import app as courses_router
 from api.user import user_app
+from models.base import Base
 from models.models import Student
 from repositories.base import get_session, engine
 from repositories.student_repository import StudentRepository
+from sqlalchemy.orm import Session
 
+def init_db():
+    import models.models
+    import models.user
+    Base.metadata.create_all(engine)
 
 @asynccontextmanager
 async def lifespan(fastapi_app: FastAPI):
+    init_db()
     student_repository = StudentRepository()
-    from sqlalchemy.orm import Session
+
     with open("students.csv", "r") as f, Session(engine) as session:
         reader = csv.DictReader(f)
         for row in reader:
