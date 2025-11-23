@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from models import Student, Base
 
 
-class DatabaseInteraction:
+class StudentRepository:
     engine = create_engine("sqlite:///students.db", echo=True)
     Base.metadata.create_all(engine)
 

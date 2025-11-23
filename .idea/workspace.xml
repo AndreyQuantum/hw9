@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="update readme file for hw10">
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="fix student deletion">
+      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme_hw9.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="hw10" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,7 +71,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "hw10",
+    "git-widget-placeholder": "hw11",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/home/andrey-zelentsov/PycharmProjects/MS_python/MFTI-workshop-project",
     "to.speed.mode.migration.done": "true"
@@ -72,6 +80,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -153,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763322753615</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix student deletion">
+      <option name="closed" value="true" />
+      <created>1763323688941</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763323688941</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +183,7 @@
     <MESSAGE value="fix bugs, add readme.md" />
     <MESSAGE value="add update and delete methods, integrate with FastAPI, revamp structure" />
     <MESSAGE value="update readme file for hw10" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme file for hw10" />
+    <MESSAGE value="fix student deletion" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix student deletion" />
   </component>
 </project>
