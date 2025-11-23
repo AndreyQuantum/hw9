@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from repositories.base import session_deps
+from api.dependencies import session_deps
 from repositories.user_repository import UserRepository
 from schemas.user import CreateUser, GetUser
 

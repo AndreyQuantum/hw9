@@ -6,6 +6,10 @@ from services.password_service import PasswordService
 
 
 class UserRepository:
+
+    def get_user_by_email(self, email: str, db_session: Session) -> User | None:
+        return db_session.query(User).filter(User.email == email).first()
+
     def create_user(self, user: CreateUser, db_session: Session) -> User:
         created_user = User(**user.model_dump(exclude={"password"}))
         created_user.hashed_password = PasswordService().hash_password(user.password)

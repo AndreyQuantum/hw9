@@ -1,7 +1,3 @@
-from contextlib import contextmanager
-from typing import Annotated
-
-from fastapi.params import Depends
 from sqlalchemy import create_engine
 
 from models.base import Base
@@ -14,4 +10,3 @@ def get_session():
     with Session(engine) as session:
         yield session
 
-session_deps = Annotated[Session, Depends(get_session)]

@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from repositories.base import session_deps
+from api.dependencies import session_deps
 from repositories.course_repository import CourseRepository
 
 app = APIRouter()

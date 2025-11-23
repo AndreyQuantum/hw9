@@ -4,6 +4,8 @@ import uuid
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
+
+from api.auth import auth_router
 from api.student import app as student_router
 from api.grade import app as grade_router
 from api.courses import app as courses_router
@@ -45,3 +47,4 @@ app.include_router(router=student_router, prefix="/student", tags=["student"])
 app.include_router(router=grade_router, prefix="/grade", tags=["grade"])
 app.include_router(router=courses_router, prefix="/course",tags=["course"])
 app.include_router(router=user_app, prefix="/user",tags=["user"])
+app.include_router(router=auth_router, prefix="/auth",tags=["auth"])

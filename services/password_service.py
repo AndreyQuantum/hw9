@@ -1,4 +1,5 @@
-from passlib.hash import argon2
+from passlib.handlers.argon2 import argon2
+
 
 class PasswordService:
 
