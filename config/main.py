@@ -7,12 +7,15 @@ class RedisConfig(BaseModel):
     port: int
     db: int
 
-
-
 class AppConfig(BaseModel):
+    cache_ttl: int
+
+class Settings(BaseModel):
     redis: RedisConfig
+    app: AppConfig
 
 
 env_settings = Dynaconf(settings_file=["settings.yml"])
 
-settings = AppConfig(redis=env_settings["redis"])
+settings = Settings(redis=env_settings["redis"],
+                    app=env_settings["app"])
