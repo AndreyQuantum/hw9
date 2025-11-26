@@ -2,3 +2,5 @@ redis:
   host: localhost
   port: 6379
   db: 0
+app:
+  cache_ttl: 60

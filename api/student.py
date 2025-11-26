@@ -1,7 +1,8 @@
 from fastapi import HTTPException, APIRouter
 
 from models.models import Student
-from api.dependencies import session_deps, auth_deps
+from api.dependencies.db import session_deps
+from api.dependencies.token import auth_deps
 from repositories.student_repository import StudentRepository
 from schemas.student import CreateStudent, GetStudent
 

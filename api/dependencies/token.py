@@ -1,15 +1,10 @@
 from typing import Annotated
 
 from fastapi.params import Depends, Security
-from fastapi.security import OAuth2PasswordBearer
-from sqlalchemy.orm import Session
 
+from api.dependencies.db import session_deps
 from models.user import User
-from repositories.base import get_session
 from services.auth_service import AuthService, oauth2_scheme
-
-session_deps = Annotated[Session, Depends(get_session)]
-
 
 
 def login_by_token(

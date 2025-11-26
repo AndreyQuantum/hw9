@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Security
 
 from api.auth import auth_router
-from api.dependencies import auth_deps, login_by_token, auth_security
+from api.dependencies.token import auth_security
 from api.student import app as student_router
 from api.grade import app as grade_router
 from api.courses import app as courses_router
@@ -16,6 +16,7 @@ from models.models import Student
 from repositories.base import get_session, engine
 from repositories.student_repository import StudentRepository
 from sqlalchemy.orm import Session
+
 
 def init_db():
     import models.models

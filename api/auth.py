@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from starlette import status
 
-from api.dependencies import session_deps
+from api.dependencies.db import session_deps
 from schemas.auth import Token
 from services.auth_service import AuthService
 

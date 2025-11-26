@@ -1,6 +1,6 @@
 from fastapi import HTTPException, APIRouter
 
-from api.dependencies import session_deps
+from api.dependencies.db import session_deps
 from repositories.grade_repository import GradeRepository
 
 app = APIRouter()
