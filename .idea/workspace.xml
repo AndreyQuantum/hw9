@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="add `cache_ttl` to config, introduce `Settings` model, and refactor Dynaconf initialization">
-      <change afterPath="$PROJECT_DIR$/api/dependencies/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/dependencies/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/dependencies/redis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth.py" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="add Redis integration for caching, modularize dependencies, and update Makefile with dev command">
+      <change afterPath="$PROJECT_DIR$/services/redis_cache_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/dependencies/token.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/dependencies/redis.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.yml" beforeDir="false" afterPath="$PROJECT_DIR$/settings.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764190928196</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add Redis integration for caching, modularize dependencies, and update Makefile with dev command">
+      <option name="closed" value="true" />
+      <created>1764192651245</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1764192651245</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add Redis integration for caching, modularize dependencies, and update Makefile with dev command">
+      <option name="closed" value="true" />
+      <created>1764192658349</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1764192658349</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -290,6 +298,18 @@
     <MESSAGE value="add logout endpoint, implement token-based user authentication, and secure API routes with dependencies" />
     <MESSAGE value="integrate Redis for caching, configure Dynaconf for dynamic settings, and update project with Docker support" />
     <MESSAGE value="add `cache_ttl` to config, introduce `Settings` model, and refactor Dynaconf initialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="add `cache_ttl` to config, introduce `Settings` model, and refactor Dynaconf initialization" />
+    <MESSAGE value="add Redis integration for caching, modularize dependencies, and update Makefile with dev command" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Redis integration for caching, modularize dependencies, and update Makefile with dev command" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/services/redis_cache_service.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
