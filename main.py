@@ -1,44 +1,29 @@
-import csv
 import os
-import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException, Security
+from fastapi import FastAPI
 
 from api.auth import auth_router
-from api.dependencies.token import auth_security
 from api.student import app as student_router
 from api.grade import app as grade_router
 from api.courses import app as courses_router
 from api.user import user_app
 from models.base import Base
-from models.models import Student
-from repositories.base import get_session, engine
+from repositories.base import engine
 from repositories.student_repository import StudentRepository
-from sqlalchemy.orm import Session
+
+from tasks.import_from_csv import export_students_from_csv
+from pathlib import Path
 
 
 def init_db():
-    import models.models
-    import models.user
     Base.metadata.create_all(engine)
 
 @asynccontextmanager
 async def lifespan(fastapi_app: FastAPI):
     init_db()
-    student_repository = StudentRepository()
 
-    with open("students.csv", "r") as f, Session(engine) as session:
-        reader = csv.DictReader(f)
-        for row in reader:
-            student = Student(
-                last_name=row["Фамилия"],
-                name=row["Имя"],
-                faculty=row["Факультет"],
-                course=row["Курс"],
-                grade=row["Оценка"]
-            )
-            student_repository.create_student(student, session)
+    await export_students_from_csv(path_to_csv=Path("students.csv"))
     yield
     engine.dispose()
     os.remove("students.db")
