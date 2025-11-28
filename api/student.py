@@ -1,4 +1,5 @@
 from fastapi import HTTPException, APIRouter
+from starlette.requests import Request
 
 from models.models import Student
 from api.dependencies.db import session_deps
@@ -14,25 +15,25 @@ cache = RedisCache()
 
 @app.get("/")
 @cache.cache()
-def get_students(db_session: session_deps,faculty: str | None = None):
+async def get_students(db_session: session_deps, request: Request,faculty: str | None = None):
     result = StudentRepository().get_students(faculty, db_session)
     if result:
         return result
     raise HTTPException(status_code=404, detail="Students not found")
 
 @app.post("/")
-@cache.invalidate("get_students")
-def create_student(student: CreateStudent,db_session: session_deps) -> GetStudent:
+@cache.invalidate()
+async def create_student(student: CreateStudent,db_session: session_deps, request: Request) -> GetStudent:
     student_to_create = Student(**student.model_dump())
     return StudentRepository().create_student(student_to_create, db_session)
 
 @app.put("/{student_id}")
 @cache.invalidate()
-def update_student(student_id: int, student: CreateStudent, db_session: session_deps) -> GetStudent:
+async def update_student(student_id: int, student: CreateStudent, db_session: session_deps, request: Request) -> GetStudent:
     updated_dict = student.model_dump(exclude_unset=True)
     return StudentRepository().update_student(student_id, updated_dict, db_session)
 
 @app.delete("/{student_id}")
 @cache.invalidate()
-def delete_student(student_id: int, db_session: session_deps) -> GetStudent:
+async def delete_student(student_id: int, db_session: session_deps, request: Request) -> GetStudent:
     return StudentRepository().delete_student(student_id, db_session)

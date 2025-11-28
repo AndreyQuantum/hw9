@@ -1,4 +1,5 @@
 from fastapi import HTTPException, APIRouter
+from starlette.requests import Request
 
 from api.dependencies.db import session_deps
 from repositories.grade_repository import GradeRepository
@@ -9,7 +10,7 @@ cache = RedisCache()
 
 @app.get("/grade/middle")
 @cache.cache()
-def get_middle_grade(db_session: session_deps) -> float:
+async def get_middle_grade(db_session: session_deps, request: Request) -> float:
     result = GradeRepository().get_middle_grade(db_session)
     if result:
         return result

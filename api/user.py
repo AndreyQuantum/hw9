@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from starlette.requests import Request
 
 from api.dependencies.db import session_deps
 from repositories.user_repository import UserRepository
@@ -9,5 +10,5 @@ user_app = APIRouter()
 cache = RedisCache()
 
 @user_app.post("/register")
-def register_user(user_data: CreateUser, db_session: session_deps) -> GetUser:
+async def register_user(user_data: CreateUser, db_session: session_deps, request: Request) -> GetUser:
     return UserRepository().create_user(user_data, db_session)

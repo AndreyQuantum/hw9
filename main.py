@@ -47,7 +47,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(router=auth_router, prefix="/auth",tags=["auth"])
 
-app.include_router(router=student_router, prefix="/student", tags=["student"], dependencies=[auth_security])
-app.include_router(router=grade_router, prefix="/grade", tags=["grade"], dependencies=[auth_security])
-app.include_router(router=courses_router, prefix="/course",tags=["course"], dependencies=[auth_security])
+app.include_router(router=student_router, prefix="/student", tags=["student"])
+app.include_router(router=grade_router, prefix="/grade", tags=["grade"])
+app.include_router(router=courses_router, prefix="/course",tags=["course"])
 app.include_router(router=user_app, prefix="/user",tags=["user"])

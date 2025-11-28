@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+from starlette.requests import Request
 
 from api.dependencies.db import session_deps
 from repositories.course_repository import CourseRepository
@@ -9,7 +10,7 @@ cache = RedisCache()
 
 @app.get("/courses")
 @cache.cache()
-def get_courses(db_session: session_deps) -> list[str]:
+async def get_courses(db_session: session_deps, request: Request) -> list[str]:
     result = CourseRepository().get_courses(db_session)
     if result:
         return result
