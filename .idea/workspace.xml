@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="add Redis integration for caching, modularize dependencies, and update Makefile with dev command">
-      <change beforePath="$PROJECT_DIR$/api/courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/courses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/grade.py" afterDir="false" />
+    <list default="true" id="8b0ec1da-008a-410f-95c6-f8254f6c074d" name="Changes" comment="refactor `RedisCache` to support request-based caching, enhance API endpoints with cache decorators, and adjust routing dependencies">
+      <change afterPath="$PROJECT_DIR$/services/student_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/import_from_csv.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/redis_cache_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/redis_cache_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/student_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/student_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +61,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.db_interaction.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.repository.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hw12&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andrey-zelentsov/PycharmProjects/MS_python/hw9/api/dependencies/db.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.db_interaction.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.repository.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "hw12",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/andrey-zelentsov/PycharmProjects/MS_python/hw9/tasks/import_from_csv.py",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -280,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764192658349</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactor `RedisCache` to support request-based caching, enhance API endpoints with cache decorators, and adjust routing dependencies">
+      <option name="closed" value="true" />
+      <created>1764314013535</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764314013535</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -301,6 +309,7 @@
     <MESSAGE value="integrate Redis for caching, configure Dynaconf for dynamic settings, and update project with Docker support" />
     <MESSAGE value="add `cache_ttl` to config, introduce `Settings` model, and refactor Dynaconf initialization" />
     <MESSAGE value="add Redis integration for caching, modularize dependencies, and update Makefile with dev command" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Redis integration for caching, modularize dependencies, and update Makefile with dev command" />
+    <MESSAGE value="refactor `RedisCache` to support request-based caching, enhance API endpoints with cache decorators, and adjust routing dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor `RedisCache` to support request-based caching, enhance API endpoints with cache decorators, and adjust routing dependencies" />
   </component>
 </project>
